@@ -25,6 +25,7 @@ def post_image_from_path(url:str, path:str, shape:tuple[int,int]=None):
     img = cv2.imread(path)
     if not shape is None and isinstance(shape, tuple):
        img = cv2.resize(img, shape, interpolation=cv2.INTER_AREA)
+
     return post_image(url, img)   
 
 def post_image(url:str, image:np.ndarray):
