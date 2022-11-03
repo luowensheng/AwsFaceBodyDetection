@@ -1,11 +1,10 @@
 
-import opencv_stream 
+from opencv_stream import VideoStreamer, FpsDrawer
 import numpy as np
 from model import Model, ModelOutput
 
-stream = opencv_stream.VideoStreamer.from_webcam()
-fps = opencv_stream.FpsDrawer()
-
+stream = VideoStreamer.from_webcam()
+fps = FpsDrawer()
 
 model = Model()
 
@@ -19,6 +18,7 @@ def index(frame: np.ndarray):
       output.draw(frame)
 
    fps.draw(frame)
+
 
 
 stream.start()
