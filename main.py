@@ -20,5 +20,4 @@ def index(frame: np.ndarray):
    fps.draw(frame)
 
 
-
 stream.start()
